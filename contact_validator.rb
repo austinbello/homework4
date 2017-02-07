@@ -68,7 +68,7 @@ class ContactValidator
   end
 
   def invalid_output
-    invalid_array.each {|i| puts "Line #{i[3]}: #{invalid_message(i)}"}
+    invalid_array.each {|i| puts "Line #{i[3]+1}: #{invalid_message(i)}"}
   end
 end
 

@@ -16,6 +16,16 @@ class ContactValidatorTest < Minitest::Test
 
   def test_validation_array
     validator = ContactValidator.new('simple.csv')
-    assert_equal [[true, false], [true, false], [true, true]], validator.validation_array
+    assert_equal [[true, true, true], [false, false, true]], validator.validation_array
+  end
+
+  def test_true_count
+    validator = ContactValidator.new('simple.csv')
+    assert_equal 1, validator.true_count
+  end
+
+  def test_invalid_array
+    validator = ContactValidator.new('simple.csv')
+    assert_equal [[false, false, true, 1]], validator.invalid_array
   end
 end
